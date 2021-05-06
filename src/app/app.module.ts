@@ -11,10 +11,12 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaisesComponent } from './paises/paises.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PaisesComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AngularFireStorageModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NavbarModule
+    NavbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

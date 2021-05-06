@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'primerParcialLabo4';
+
+  
+  cargarPaisSeleccionado(e:any){
+    console.log(e);
+  }
 }
