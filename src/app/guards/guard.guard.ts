@@ -1,3 +1,4 @@
+import { AbmService } from './../services/abm.service';
 import { AuthService } from './../services/auth.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanDeactivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
@@ -9,7 +10,8 @@ import { Observable } from 'rxjs';
 export class GuardGuard implements CanActivate, CanDeactivate<unknown> {
   constructor(
     private auth:AuthService,
-    private router: Router
+    private router: Router,
+    private abmSvc: AbmService
   ){
 
   }
@@ -24,6 +26,11 @@ export class GuardGuard implements CanActivate, CanDeactivate<unknown> {
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
+  }
+  verificarForm(){
+    // if(this.abmSvc.verificoForm()){
+
+    // }
   }
 
   verificarLogueo(){

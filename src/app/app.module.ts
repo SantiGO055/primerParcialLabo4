@@ -13,8 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaisesComponent } from './paises/paises.component';
 import { BienvenidoComponent } from './pages/bienvenido/bienvenido.component';
-import { LoginComponent } from './pages/login/login.component';
 import { AltaRepartidorComponent } from './pages/alta-repartidor/alta-repartidor.component';
+import { ListadoRepartidorComponent } from './listado-repartidor/listado-repartidor.component';
+import { ListadoPaisesRepartidorComponent } from './listado-paises-repartidor/listado-paises-repartidor.component';
+import { RepartidorSeleccionadoComponent } from './repartidor-seleccionado/repartidor-seleccionado.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -23,8 +26,11 @@ import { AltaRepartidorComponent } from './pages/alta-repartidor/alta-repartidor
     AppComponent,
     PaisesComponent,
     BienvenidoComponent,
-    LoginComponent,
-    AltaRepartidorComponent
+    AltaRepartidorComponent,
+    ListadoRepartidorComponent,
+    ListadoPaisesRepartidorComponent,
+    RepartidorSeleccionadoComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,7 @@ import { AltaRepartidorComponent } from './pages/alta-repartidor/alta-repartidor
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [ListadoRepartidorComponent,ListadoPaisesRepartidorComponent]
 })
 export class AppModule { }

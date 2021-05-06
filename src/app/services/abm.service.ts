@@ -14,7 +14,7 @@ export class AbmService {
   peliculaDoc: AngularFirestoreDocument<any> | undefined; // colocar en any el nombre de la clase creada
  public repartidor: Observable<Repartidor[]>; //colocar en any el nombre de la clase para obtener de ña base una lista de todos los elementos de esa clase
   private paisActual?:string;
-
+  public formCompleto: boolean= false;
   constructor(public db: AngularFirestore,
     private http: HttpClient) {
     this.paisActual = 'Argentina';
@@ -48,6 +48,12 @@ export class AbmService {
    }
    altaRepartidor(repartidor: Repartidor){
     return this.repartidorCollection.add(JSON.parse( JSON.stringify(repartidor)));
+   }
+   getRepartidor(){
+    return this.repartidor;
+   }
+   verificoForm(){
+
    }
   //  add(pelicula: Pelicula){
 

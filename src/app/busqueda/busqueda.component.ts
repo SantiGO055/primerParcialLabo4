@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Repartidor } from '../clases/repartidor';
 
 @Component({
   selector: 'app-busqueda',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusquedaComponent implements OnInit {
 
+  repartidorSeleccionado!:Repartidor;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  cargarEventoRepartidorRecibido(e:any){
+    console.log(e);
+    this.repartidorSeleccionado = e;
+  }
 }

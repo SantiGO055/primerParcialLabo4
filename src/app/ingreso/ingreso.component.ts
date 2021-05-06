@@ -1,14 +1,14 @@
-import { Router } from '@angular/router';
-import { AuthService } from './../../services/auth.service';
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/clases/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-ingreso',
+  templateUrl: './ingreso.component.html',
+  styleUrls: ['./ingreso.component.css']
 })
-export class LoginComponent implements OnInit {
+export class IngresoComponent implements OnInit {
 
   correo:string = '';
   clave:string  = '';
@@ -53,4 +53,5 @@ export class LoginComponent implements OnInit {
 
 
   }
+
 }
