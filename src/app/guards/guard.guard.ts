@@ -25,9 +25,9 @@ export class GuardGuard implements CanActivate, CanDeactivate<unknown> {
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
   }
-  
+
   verificarLogueo(){
-    if(this.auth.isLogged){
+    if(this.auth.ChequearLogueado()){
           
           
     return true;

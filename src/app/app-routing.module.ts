@@ -10,11 +10,11 @@ const routes: Routes = [
     path: '', component: LoginComponent
   },
   {
-    path: 'bienvenido', component: BienvenidoComponent
+    path: 'bienvenido/altaRepartidor', component: AltaRepartidorComponent,
+    // canActivate: [GuardGuard]
   },
   {
-    path: 'altaRepartidor', component: AltaRepartidorComponent, 
-    // canActivate: [GuardGuard]
+    path: 'bienvenido', component: BienvenidoComponent
   },
   { path: 'navbar', loadChildren: () => import('./navbar/navbar.module').then(m => m.NavbarModule) 
   },
