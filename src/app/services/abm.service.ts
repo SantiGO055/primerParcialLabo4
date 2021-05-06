@@ -3,28 +3,29 @@ import { Injectable } from '@angular/core';
 import {AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Repartidor } from '../clases/repartidor';
 @Injectable({
   providedIn: 'root'
 })
 export class AbmService {
 
-  private dbpath = '/peliculas';
-  peliculasColecction: AngularFirestoreCollection<any> | undefined;
+  private dbpathRepartidor = '/repartidor';
+  private repartidorCollection: AngularFirestoreCollection<any>;
   peliculaDoc: AngularFirestoreDocument<any> | undefined; // colocar en any el nombre de la clase creada
-  // public peliculas: Observable<any[]>; //colocar en any el nombre de la clase para obtener de ña base una lista de todos los elementos de esa clase
+ public repartidor: Observable<Repartidor[]>; //colocar en any el nombre de la clase para obtener de ña base una lista de todos los elementos de esa clase
   private paisActual?:string;
 
   constructor(public db: AngularFirestore,
     private http: HttpClient) {
     this.paisActual = 'Argentina';
-    // this.peliculasColecction = db.collection(this.dbpath);
-    // this.peliculas = this.peliculasColecction.snapshotChanges().pipe(map(actions=>{
-    //   return actions.map(a=>{
-    //     const data = a.payload.doc.data() as Pelicula; //colocar nombre de clase a obtener
-    //     data.id = a.payload.doc.id;
-    //     return data;
-    //   });
-    // }));
+    this.repartidorCollection = db.collection(this.dbpathRepartidor);
+    this.repartidor = this.repartidorCollection.snapshotChanges().pipe(map(actions=>{
+      return actions.map(a=>{
+        const data = a.payload.doc.data() as Repartidor; //colocar nombre de clase a obtener
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
 
 
    }
@@ -42,7 +43,12 @@ export class AbmService {
    getAllCountries(){
     return this.http.get("https://restcountries.eu/rest/v2/all");
    }
-
+   getGithub(){
+    return this.http.get("https://api.github.com/users/SantiGO055");
+   }
+   altaRepartidor(repartidor: Repartidor){
+    return this.repartidorCollection.add(JSON.parse( JSON.stringify(repartidor)));
+   }
   //  add(pelicula: Pelicula){
 
   //   return this.peliculasColecction.add(JSON.parse( JSON.stringify(pelicula)));

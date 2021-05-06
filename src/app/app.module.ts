@@ -12,11 +12,19 @@ import { AngularFireModule } from '@angular/fire';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaisesComponent } from './paises/paises.component';
+import { BienvenidoComponent } from './pages/bienvenido/bienvenido.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AltaRepartidorComponent } from './pages/alta-repartidor/alta-repartidor.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PaisesComponent
+    PaisesComponent,
+    BienvenidoComponent,
+    LoginComponent,
+    AltaRepartidorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +34,7 @@ import { PaisesComponent } from './paises/paises.component';
     HttpClientModule,
     ReactiveFormsModule,
     NavbarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

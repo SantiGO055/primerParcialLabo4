@@ -4,6 +4,7 @@ export class User {
     username: string;
     status?:string;
     fecha: string;
+    perfil!:string;
     constructor(){
         this.email = "";
         this.uid = "";

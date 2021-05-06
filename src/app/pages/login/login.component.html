@@ -1,0 +1,17 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+  
+      <div class="fadeIn first">
+          
+      </div>
+  
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="usuario" [(ngModel)]="correo">
+        <input type="text" id="password" class="fadeIn third" name="password" placeholder="clave" [(ngModel)]="clave">
+        <input type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
+      </form>
+      <input type="submit" class="fadeIn fourth" value="Empleado" (click)="cargarEmpleado()">
+      <input type="submit" class="fadeIn fourth" value="Admin" (click)="cargarAdmin()">
+  
+    </div>
+  </div>
