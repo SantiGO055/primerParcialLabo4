@@ -53,6 +53,7 @@ export class AltaRepartidorComponent implements OnInit {
     const queDevolvio= this.abmSvc.altaRepartidor(auxRepar);
     console.log(queDevolvio.then((ok: { path: any; })=>{
       if(ok.path){
+        this.abmSvc.formCompleto = true;
         alert("Se dio de alta el repartidor correctamente");
         this.router.navigateByUrl("/bienvenido")
       }

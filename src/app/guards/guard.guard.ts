@@ -25,12 +25,15 @@ export class GuardGuard implements CanActivate, CanDeactivate<unknown> {
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    return this.verificarForm();
   }
   verificarForm(){
-    // if(this.abmSvc.verificoForm()){
-
-    // }
+    if(this.abmSvc.formCompleto){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   verificarLogueo(){

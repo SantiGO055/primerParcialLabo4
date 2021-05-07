@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Repartidor } from '../clases/repartidor';
 
 @Component({
@@ -10,7 +11,7 @@ export class RepartidorSeleccionadoComponent implements OnInit {
 
   @Input()repartidorSeleccionado!: Repartidor;
   constructor() {
-    
+    this.repartidorSeleccionado = new Repartidor();
    }
 
   ngOnInit(): void {
