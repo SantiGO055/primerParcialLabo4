@@ -35,40 +35,48 @@ export class PaisesComponent implements OnInit {
 
   }
 
-  verificarContinente(){
+  verificarContinenteAfrica(){
     this.listadoPaises.forEach(element => {
       console.log(element.region);
       if(element.region == "Africa"){
         this.africano = true;
         this.europeo = false;
+        console.log(element);
 
         
         this.listadoPaisesAfrica.push(JSON.parse(JSON.stringify(element)));
       }
       
     });
+    
+    
+  }
+  verificarContinenteEuropa(){
     this.listadoPaises.forEach(element => {
       console.log(element.region);
       if(element.region == "Europe"){
-        this.africano = true;
-        this.europeo = false;
+        this.africano = false;
+        this.europeo = true;
   
+        console.log(element);
         
-        this.listadoPaisesAfrica.push(JSON.parse(JSON.stringify(element)));
+        this.listadoPaisesEuropa.push(JSON.parse(JSON.stringify(element)));
       }
       
     });
-    
   }
   capturar(){
-    this.verificarContinente();
-    if(this.continente =="Africa"){
-      this.listadoPaisesEuropa = [];
-    }
-    if(this.continente =="Europe"){
-      this.listadoPaisesAfrica = [];
-    }
     this.continente = this.continente;
+    console.log(this.continente);
+    if(this.continente =="Africano"){
+      this.listadoPaisesEuropa = [];
+      this.verificarContinenteAfrica();
+    }
+    if(this.continente =="Europeo"){
+      this.listadoPaisesAfrica = [];
+      this.verificarContinenteEuropa();
+    }
+    
   }
   getAllCountries(){
     this.abmSvc.getAllCountries();

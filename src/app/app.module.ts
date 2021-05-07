@@ -18,6 +18,10 @@ import { ListadoRepartidorComponent } from './listado-repartidor/listado-reparti
 import { ListadoPaisesRepartidorComponent } from './listado-paises-repartidor/listado-paises-repartidor.component';
 import { RepartidorSeleccionadoComponent } from './repartidor-seleccionado/repartidor-seleccionado.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AltapizzaComponent } from './pizzas/altapizza/altapizza.component';
+import { BajapizzaComponent } from './pizzas/bajapizza/bajapizza.component';
+import { ModificacionpizzaComponent } from './pizzas/modificacionpizza/modificacionpizza.component';
+import { BusquedaPizzaComponent } from './busqueda-pizza/busqueda-pizza.component';
 
 
 
@@ -30,7 +34,11 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     ListadoRepartidorComponent,
     ListadoPaisesRepartidorComponent,
     RepartidorSeleccionadoComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    AltapizzaComponent,
+    BajapizzaComponent,
+    ModificacionpizzaComponent,
+    BusquedaPizzaComponent
   ],
   imports: [
     BrowserModule,

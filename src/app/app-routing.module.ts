@@ -1,3 +1,4 @@
+import { BusquedaPizzaComponent } from './busqueda-pizza/busqueda-pizza.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { GuardGuard } from './guards/guard.guard';
 import { AltaRepartidorComponent } from './pages/alta-repartidor/alta-repartidor.component';
@@ -9,11 +10,14 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./ingreso/ingreso.module').then(m => m.IngresoModule) },
   
   {
-    path: 'bienvenido/altaRepartidor', component: AltaRepartidorComponent, canDeactivate: [GuardGuard], canActivate:[GuardGuard]
+    path: 'bienvenido/altaRepartidor', component: AltaRepartidorComponent, canActivate:[GuardGuard], canDeactivate: [GuardGuard]
     // canActivate: [GuardGuard]
   },
   {
     path: 'bienvenido', component: BienvenidoComponent
+  },
+  {
+    path: 'bienvenido/busquedaPizza', component: BusquedaPizzaComponent
   },
   { path: 'navbar', loadChildren: () => import('./navbar/navbar.module').then(m => m.NavbarModule) 
   },
