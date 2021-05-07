@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./ingreso/ingreso.module').then(m => m.IngresoModule) },
   
   {
-    path: 'bienvenido/altaRepartidor', component: AltaRepartidorComponent, canDeactivate: [GuardGuard],
+    path: 'bienvenido/altaRepartidor', component: AltaRepartidorComponent, canDeactivate: [GuardGuard], canActivate:[GuardGuard]
     // canActivate: [GuardGuard]
   },
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'navbar', loadChildren: () => import('./navbar/navbar.module').then(m => m.NavbarModule) 
   },
   {
-    path: 'bienvenido/busquedaRepartidor', component: BusquedaComponent,
+    path: 'bienvenido/busquedaRepartidor', component: BusquedaComponent, canActivate:[GuardGuard],
     // canActivate: [GuardGuard]
   },
   
