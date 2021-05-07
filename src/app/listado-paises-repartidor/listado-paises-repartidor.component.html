@@ -1,1 +1,13 @@
-<p>listado-paises-repartidor works!</p>
+<h2>Detalle Repartidor</h2>
+<div *ngIf="repartidorSeleccionado">
+    <h3>Pais:</h3>
+    <p>Nombre: {{repartidorSeleccionado.pais.name}} </p>
+    <p>Capital: {{repartidorSeleccionado.pais.capital}} </p>
+    <p>Continente: {{repartidorSeleccionado.pais.region}} </p>
+    <p>Sub Region: {{repartidorSeleccionado.pais.subregion}} </p>
+    <img src={{repartidorSeleccionado.pais.flag}}>
+    
+    <!-- <p>Capacidad de transporte de pizzas: {{repartidorSeleccionado.capacidad}} </p>
+    <p>Posee unidad propia: {{repartidorSeleccionado.unidadPropia}} </p> -->
+
+</div>

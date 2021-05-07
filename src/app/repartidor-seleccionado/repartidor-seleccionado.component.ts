@@ -9,7 +9,8 @@ import { Repartidor } from '../clases/repartidor';
 })
 export class RepartidorSeleccionadoComponent implements OnInit {
 
-  @Input()repartidorSeleccionado!: Repartidor;
+  @Input()repartidorSeleccionado: Repartidor;
+
   constructor() {
     this.repartidorSeleccionado = new Repartidor();
    }

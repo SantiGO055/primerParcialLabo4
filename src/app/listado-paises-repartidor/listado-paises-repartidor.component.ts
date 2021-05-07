@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Repartidor } from '../clases/repartidor';
 
 @Component({
   selector: 'app-listado-paises-repartidor',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoPaisesRepartidorComponent implements OnInit {
 
-  constructor() { }
+  @Input()repartidorSeleccionado: Repartidor;
+
+  constructor() {
+    this.repartidorSeleccionado = new Repartidor();
+   }
 
   ngOnInit(): void {
+    console.log(this.repartidorSeleccionado);
   }
+
 
 }
